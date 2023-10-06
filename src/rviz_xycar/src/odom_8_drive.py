@@ -23,7 +23,7 @@ speed = 3
 
 while not rospy.is_shutdown():
    angle = -50
-   for i in range(40):
+   for i in range(70):
       motor_pub(angle, speed)
       time.sleep(0.1)
 
@@ -33,7 +33,7 @@ while not rospy.is_shutdown():
       time.sleep(0.1)
 
    angle = 50
-   for i in range(40):
+   for i in range(70):
       motor_pub(angle, speed)
       time.sleep(0.1)
 

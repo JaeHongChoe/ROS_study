@@ -4,13 +4,14 @@
 
     <!-- rviz display --> 
     <node name="rviz_visualizer" pkg="rviz" type="rviz" required="true" 
-                args="-d $(find rviz_xycar)/rviz/xycar_3d.rviz"/>
+                args="-d $(find rviz_xycar)/rviz/rviz_odom.rviz"/>
 
     <node name="robot_state_publisher" pkg="robot_state_publisher" 
                 type="robot_state_publisher"/>
      
     <node name="converter" pkg="rviz_xycar" type="converter.py" />
-    <node name="driver" pkg="rviz_xycar" type="rviz_8_drive.py" />
+    <node name="driver" pkg="rviz_xycar" type="odom_8_drive.py" />
+    <node name="odometry" pkg="rviz_xycar" type="rviz_odom.py" />
 
 </launch>
 
