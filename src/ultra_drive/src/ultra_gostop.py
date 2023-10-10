@@ -1,11 +1,8 @@
 #!/usr/bin/env python
 
-# ultra_gostop.py
-
-# import msg file
 import rospy, time
 from std_msgs.msg import Int32MultiArray
-from xycar_msgs.msg import xycar_motor 
+from xycar_msgs.msg import xycar_motor
 
 
 motor_msg = xycar_motor()
@@ -22,6 +19,7 @@ def drive_go():
     motor_msg.speed = 5
     motor_msg.angle = 0
     pub.publish(motor_msg)
+
 
 # define function for stoping
 def drive_stop():
