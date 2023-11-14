@@ -1,0 +1,18 @@
+<launch>  
+    <include file="$(find xycar_motor)/launch/xycar_motor.launch"/>
+    <node name="Lane_Keeping_System" pkg="LaneKeepingSystem" type="LaneKeepingSystem_node" output="screen"/>
+    <!-- get parameter from config file path-->
+    <param name="config_path" type="str" value="$(find LaneKeepingSystem)/config/config.yaml"/>
+    <!-- make your launch file to use your project. -->
+	<node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen">
+		<param name="video_device" value="/dev/videoCAM" />
+        <param name="exposure" value="80"/>
+        <param name="image_width" value="640" />
+        <param name="image_height" value="480" />
+        <param name="pixel_format" value="yuyv" />
+        <param name="io_method" value="mmap"/>
+        <param name="camera_name" value="usb_cam" />
+        <param name="camera_frame_id" value="usb_cam" />
+        <param name="camera_info_url" value="file://$(find usb_cam)/calibration/usb_cam.yaml" />
+	</node>
+</launch>

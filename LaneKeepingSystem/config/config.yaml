@@ -1,0 +1,30 @@
+IMAGE:
+  WIDTH: 640
+  HEIGHT: 480
+  # find your ROI parameter.
+
+XYCAR:
+  START_SPEED: 0.0
+  MAX_SPEED: 11.0
+  MIN_SPEED: 4.0
+  SPEED_CONTROL_THRESHOLD: 10.0
+  ACCELERATION_STEP: 0.8
+  DECELERATION_STEP: 0.30
+  Y_OFFSET: 370 # find your parameter.
+
+# If you want to use other control methods, Change PID to another control methods.
+PID:
+  P_GAIN: 0.4
+  I_GAIN: 0.0005
+  D_GAIN: 0.07
+  # find your parameter.
+
+MOVING_AVERAGE_FILTER:
+  SAMPLE_SIZE: 30
+
+TOPIC:
+  PUB_NAME: /xycar_motor
+  SUB_NAME: /usb_cam/image_raw/
+  QUEUE_SIZE: 1
+
+DEBUG: true
